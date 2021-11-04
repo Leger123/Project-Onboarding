@@ -1,6 +1,6 @@
 public class RPS {
-    public static String RPSFunction(String p1, String p2){
-        String result = "";
+    public static String rpsFunction(String p1, String p2){
+        String result;
 
         switch(p1){
             case "rock":
