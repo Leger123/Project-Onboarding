@@ -4,19 +4,49 @@ import java.util.List;
 
 public class PigLatin {
     public String pigLatin(String input){
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         List<String> myList = new ArrayList<>(Arrays.asList(input.split(" ")));
 
         for(int i = 0; i<myList.size(); i++){
             if(i == myList.size()-1){
-                result += (myList.get(i).substring(1) + myList.get(i).substring(0,1) + "ay");
+                switch(myList.get(i).charAt(0)){
+                    case 'A':
+                    case 'E':
+                    case 'I':
+                    case 'O':
+                    case 'U':
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        result.append(myList.get(i)).append("way");
+                        break;
+                    default:
+                        result.append(myList.get(i).substring(1)).append(myList.get(i).charAt(0)).append("ay");
+                }
                 break;
             }
 
-            result += (myList.get(i).substring(1) + myList.get(i).substring(0,1) + "ay ");
+            switch(myList.get(i).charAt(0)){
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U':
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    result.append(myList.get(i)).append("way ");
+                    break;
+                default:
+                    result.append(myList.get(i).substring(1)).append(myList.get(i).charAt(0)).append("ay ");
+            }
         }
 
-        return result;
+        return result.toString();
     }
 }

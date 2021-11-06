@@ -15,7 +15,7 @@ class PigLatinTest {
 
     @Test
     void pigLatin() {
-        String expectedResult = "evinKay siay ineFay";
+        String expectedResult = "evinKay isway ineFay";
         Assertions.assertEquals(expectedResult, this.pigLatin.pigLatin("Kevin is Fine"));
     }
 
